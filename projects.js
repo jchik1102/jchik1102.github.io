@@ -177,6 +177,43 @@ projectDetails['agrobot-power'] = {
   ]
 };
 window.projects.forEach(project => { project.details = projectDetails[project.id]; });
+const projectPhotos = {
+  'water-treatment': [
+    ['water-overview', 'Ignition plant overview with three tanks and live process values'],
+    ['water-pressure', 'Pressure control, PI output, and booster pump status'],
+    ['water-alarms', 'Alarm summary and event journal'],
+    ['water-model', 'Simulink plant model']
+  ],
+  'stm32': [
+    ['stm32-render', 'STM32 development board — KiCad 3D render'],
+    ['stm32-layout', 'STM32 PCB layout'],
+    ['stm32-schematic', 'STM32 development board schematic']
+  ],
+  'revit-electrical': [
+    ['revit-plan', 'Electrical floor plan and device placement'],
+    ['revit-panel', 'LP-1 panel schedule — circuit assignments and phase loads'],
+    ['revit-context', 'Linked sample architectural model used as the electrical design reference']
+  ],
+  'guide-wire': [
+    ['robot-hardware', 'Robot hardware and breadboard circuitry', 7],
+    ['robot-track', 'Robot on the guide-wire course', -90],
+    ['robot-app', 'Android Robot Controller app — mode selection']
+  ],
+  'agrobot-power': [
+    ['agrobot-render', 'Agrobot power board — KiCad 3D render'],
+    ['agrobot-layout', 'Agrobot power board layout'],
+    ['agrobot-schematic', '12 V input protection and separate 5 V / 3.3 V converters']
+  ]
+};
+window.projects.forEach(project => {
+  const images = (projectPhotos[project.id] || []).map(([name, caption, rotation = 0]) => ({
+    src: `assets/${name}.png`, alt: caption, caption, rotation
+  }));
+  if (images.length) {
+    project.media = images.slice(0, 1);
+    project.details.images = images.slice(1);
+  }
+});
 const projectOrder = ['water-treatment', 'stm32', 'revit-electrical', 'guide-wire', 'agrobot-power'];
 window.projects.sort((a, b) => {
   const rank = id => projectOrder.includes(id) ? projectOrder.indexOf(id) : projectOrder.length;
