@@ -106,7 +106,7 @@ window.projects.push(
     title:'Revit Electrical BIM',
     description:'An electrical building model developed in Revit, with a linked architectural model, electrical device placement, and receptacle circuit organization.',
     tags:['Revit 2027','Electrical BIM','Circuiting','Model coordination'],
-    repo:null,
+    repo:'https://github.com/jchik1102/Electrical-Revit-Project',
     media:[{src:'',alt:'Revit electrical model and linked architecture',caption:'Electrical model overview'}]
   },
   {
