@@ -195,7 +195,7 @@ const projectPhotos = {
     ['revit-context', 'Linked sample architectural model used as the electrical design reference']
   ],
   'guide-wire': [
-    ['robot-hardware', 'Robot hardware and breadboard circuitry', 7],
+    ['robot-hardware', 'Robot hardware and breadboard circuitry'],
     ['robot-track', 'Robot on the guide-wire course', -90],
     ['robot-app', 'Android Robot Controller app — mode selection']
   ],
